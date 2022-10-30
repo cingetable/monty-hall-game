@@ -8,22 +8,31 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="logo">Парадокс Монти-Холла</div>
+<input type="image" src="img/restart.png" class="restart_button" id="restart_button">
     <div class="container">
-        <div class="game_counter" id="game_counter">0</div>
-        <div class="door"></div>
-        <div class="door"></div>
-        <div class="door"></div>
-        <div class="stats">
-            <p>Дверь поменялась</p>
-            <p id="door_changed_count"></p>
-            <p id="door_changed_win" class="win">0</p>
-            <p id="door_changed_lose" class="lose">0</p>
+        <div class="game_count">
+            Счетчик игр:
+            <span id="game_count">0</span>
         </div>
-        <div class="stats">
-            <p>Дверь поменялась</p>
-            <p id="door_not_changed_count"></p>
-            <p id="door_not_changed_win" class="win">0</p>
-            <p id="door_not_changed_lose" class="lose">0</p>
+        <div class="door_block">
+            <input type="image" src="img/close-door.png" class="door">
+            <input type="image" src="img/close-door.png" class="door">
+            <input type="image" src="img/close-door.png" class="door">
+        </div>
+        <div class="stats_block">
+            <div class="stats">
+                <p>Дверь поменялась</p>
+                <div id="door_changed_count">0</div>
+                <div id="door_changed_win" class="win">0</div>
+                <div id="door_changed_lose" class="lose">0</div>
+            </div>
+            <div class="stats">
+                <p>Дверь не поменялась</p>
+                <div id="door_not_changed_count">0</div>
+                <div id="door_not_changed_win" class="win">0</div>
+                <div id="door_not_changed_lose" class="lose">0</div>
+            </div>
         </div>
     </div>
 </body>
