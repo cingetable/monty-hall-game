@@ -6,13 +6,19 @@
     font-family: 'Roboto', sans-serif;
 }
 
-button {
+.door {
     background-image: url("../img/close-door.png");
     background-position: center;
     background-size: contain;
     height: 300px;
     width: 150px;
     margin: 30px;
+    transition: .1s linear;
+}
+
+.door:hover {
+    opacity: 0.6;
+    transition: .1s linear;
 }
 .logo {
     font-weight: bold;
@@ -52,9 +58,7 @@ button {
     justify-content: center;
 }
 
-.door:hover {
-    opacity: 0.6;
-}
+
 
 .stats_block {
 
