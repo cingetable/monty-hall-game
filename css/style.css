@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.logo {
+    font-weight: bold;
+    font-size: 48px;
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.restart_button {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 30px;
+    right: 30px;
+    transition: .1s linear;
+}
+
+.restart_button:hover {
+    filter: invert(0.6);
+    transition: .1s linear;
+}
+.game_count {
+    text-align: center;
+}
+.container {
+    margin: 30px;
+}
+
+.game_counter{
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+.door_block {
+    display: flex;
+    justify-content: center;
+}
+
+.door {
+    height: 300px;
+    width: 150px;
+    margin: 30px;
+    transition: .1s linear;
+}
+.door:hover {
+    opacity: 0.6;
+}
+
+.stats_block {
+
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.stats {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.win {
+    color: green;
+}
+
+.lose {
+    color: red;
+}
+
+
