@@ -5,6 +5,15 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
+button {
+    background-image: url("../img/close-door.png");
+    background-position: center;
+    background-size: contain;
+    height: 300px;
+    width: 150px;
+    margin: 30px;
+}
 .logo {
     font-weight: bold;
     font-size: 48px;
@@ -43,12 +52,6 @@
     justify-content: center;
 }
 
-.door {
-    height: 300px;
-    width: 150px;
-    margin: 30px;
-    transition: .1s linear;
-}
 .door:hover {
     opacity: 0.6;
 }
