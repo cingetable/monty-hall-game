@@ -7,10 +7,9 @@
 }
 
 .door {
-    background-image: url("../img/close-door.png");
-    background-position: center;
-    background-size: contain;
-    height: 300px;
+    background: black;
+    border-radius: 10px;
+    height: 150px;
     width: 150px;
     margin: 30px;
     transition: .1s linear;
