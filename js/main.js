@@ -14,12 +14,57 @@ let isDoorSelect = [false, false, false];
 let doorsContent = ['goat', 'car', 'goat'];
 let gameStart = false;
 
-
+let state = 'before';
 // main handler
 function clickDoor(buttonId) {
-
+    switch (state) {
+        case ('before'):
+            BeforeGame(buttonId);
+            state = 'in';
+            break;
+        case ('in'):
+            InGame(buttonId);
+            state = 'after';
+            break;
+        case ('after'):
+            AfterGame(buttonId);
+            state = 'before';
+    }
 }
+function BeforeGame(buttonId) {
+    SelectDoor(doors[buttonId]);
+    OpenGoat(doors[buttonId]);
+    PlusOne(gameCount);
+}
+function InGame(buttonId) {
+    OpenDoor(doors[buttonId]);
+    if (isDoorSelect[buttonId] === true) {
+        if (IsWin(doorsContent[buttonId]))
+            AddStats(doorNotChangedCount, doorNotChangedWins);
+        else
+            AddStats(doorNotChangedCount, doorNotChangedLose);
+    }
+    else {
+        if (IsWin(doorsContent[buttonId]))
+            AddStats(doorChangedCount, doorChangedWins);
+        else
+            AddStats(doorChangedCount, doorChangedLose);
+    }
+}
+function AfterGame(buttonId) {
+    for (i = 0; i < 3; i++) {
+        doors[i].style.backgroundColor = "black";
+        doors[i].style.border = "1px solid black";
+    }
 
+
+    doorsContent.sort(()=>Math.random()-0.5);
+    isDoorSelect = [false, false, false];
+    gameStart = false;
+}
+function IsWin(label) {
+    return label === 'car';
+}
 function OpenDoor(door) {
     if (doorsContent[doors.indexOf(door)] === 'goat')
         door.style.backgroundColor = "red";
@@ -35,6 +80,7 @@ function OpenGoat(door) {
 }
 function SelectDoor(door) {
     door.style.border = "3px solid blue";
+    isDoorSelect[doors.indexOf(door)] = true;
 }
 function PlusOne(object) {
     object.textContent = (parseInt(object.textContent) + 1).toString();
@@ -52,14 +98,5 @@ function restart(buttonId) {
     doorNotChangedWins.textContent = '0';
     doorChangedLose.textContent = '0';
     doorNotChangedLose.textContent = '0';
-
-    for (i = 0; i < 3; i++) {
-        doors[i].style.backgroundColor = "black";
-        doors[i].style.border = "1px solid black";
-    }
-
-
-    doorsContent.sort(()=>Math.random()-0.5);
-    isDoorSelect = [false, false, false];
-    gameStart = false;
+    State3(null);
 }
